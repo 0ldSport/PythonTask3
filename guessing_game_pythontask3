@@ -1,0 +1,65 @@
+import string
+import random
+
+
+def easy_mode():
+    numbers_easy = random.randint(1, 10)
+    return numbers_easy
+
+
+def med_mode():
+    numbers_med = random.randint(1, 20)
+    return numbers_med
+
+
+def hard_mode():
+    numbers_hard = random.randint(1, 50)
+    return numbers_hard
+
+
+first_name = input("Enter your name: ")
+print(f"{first_name} welcome to the Digit Guessing Game!")
+print()
+print('Please Select the Game difficulty from the options below:')
+print()
+game_difficulty = input('''Press "E" for Easy "M" for Medium and "H" for Hard: ''').upper()
+if game_difficulty == "E":
+    user_guess_counter = 1
+    guess_limit = 6
+    while user_guess_counter <= guess_limit:
+        guess = input("Enter any number between 1 - 10: ")
+        user_guess_counter += 1
+        if guess == easy_mode():
+            print("You got it right")
+            break
+        elif guess != easy_mode():
+            input("You got it wrong, please try again: ")
+    else:
+        print("Game Over!!")
+
+elif game_difficulty == "M":
+    user_guess_counter_Med = 1
+    guess_limit = 4
+    while user_guess_counter_Med <= guess_limit:
+        guess = input("Enter any number between 1 - 20: ")
+        user_guess_counter_Med += 1
+        if guess == med_mode():
+            print("You got it right")
+            break
+        elif guess != med_mode():
+            input("You got it wrong, please try again: ")
+    else:
+        print("Game Over!!")
+elif game_difficulty == "H":
+    user_guess_counter_hard = 1
+    guess_limit = 3
+    while user_guess_counter_hard <= guess_limit:
+        guess = input("Enter any number between 1 - 50: ")
+        user_guess_counter_hard += 1
+        if guess == hard_mode():
+            print("You got it right")
+            break
+        elif guess != hard_mode():
+            input("You got it wrong, please try again: ")
+    else:
+        print("Game Over!!")
